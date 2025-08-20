@@ -1,7 +1,17 @@
 
 import streamlit as st
 import pandas as pd
-import joblib
+import joblib, traceback, streamlit as st
+
+st.title("Loan Risk Analyzer")
+
+try:
+    model = joblib.load("Model.pkl")
+except Exception:
+    st.error("Failed to load Model.pkl – full traceback below:")
+    st.text(traceback.format_exc())
+    st.stop()
+
 
 # Load model
 model = joblib.load('Model.pkl')
