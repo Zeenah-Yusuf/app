@@ -1,3 +1,2 @@
 joblib==1.3.2
-scikit-learn==<that-version>
-
+scikit-learn==1.7.1
